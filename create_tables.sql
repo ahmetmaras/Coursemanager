@@ -1,4 +1,11 @@
 -- Creation of table
+CREATE TABLE if NOT EXISTS courses (
+    course_id INT NOT NUll,
+    description VARCHAR(250) NOT NULL,
+    degree VARCHAR(250) NOT NULL,
+    PRIMARY KEY (course_id)
+);
+
 CREATE TABLE IF NOT EXISTS students (
   matrikl_nr INT NOT NULL,
   student_course_id INT NOT NULL,
@@ -27,9 +34,3 @@ CREATE TABLE if NOT EXISTS signUp (
   FOREIGN KEY (module_id) REFERENCES modules(module_id)
 );
 
-CREATE TABLE if NOT EXISTS courses (
-    course_id INT NOT NUll,
-    description VARCHAR(250) NOT NULL,
-    degree VARCHAR(250) NOT NULL,
-    PRIMARY KEY (course_id)
-);
