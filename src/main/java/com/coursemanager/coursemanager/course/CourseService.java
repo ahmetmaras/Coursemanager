@@ -1,9 +1,12 @@
 package com.coursemanager.coursemanager.course;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
 
 @Service
 public class CourseService {
@@ -14,6 +17,8 @@ public class CourseService {
     public String createCourse(Course course) {
 
         try {
+
+            
 
             courseRepository.save(course);
             courseRepository.flush();
@@ -68,5 +73,8 @@ public class CourseService {
         return "Course with courseId " + courseId + " successfully deleted";
 
     }
+
+    
+
 
 }

@@ -28,6 +28,7 @@ public class CourseController {
 
     @GetMapping("get/{courseId}")
     public Course getCourse(@PathVariable int courseId) {
+        System.out.println(courseId);
 
         return courseService.getCourse(courseId);
     }

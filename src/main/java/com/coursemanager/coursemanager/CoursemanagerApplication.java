@@ -1,3 +1,4 @@
+
 package com.coursemanager.coursemanager;
 
 import org.springframework.boot.SpringApplication;

@@ -1,5 +1,7 @@
 package com.coursemanager.coursemanager.course;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -28,10 +30,9 @@ public class Course {
 
     @Column(name= "degree")
     private String degree;
-    
-  //  private List<Module> moduleList;
-}
 
-/* enum degree {
-    BachelorOfSciences, MasterOfSciences
-} */
+    @Column(name = "module_list")
+    private List<Integer> moduleList; 
+    
+}
+ 
