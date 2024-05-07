@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
 @Service
 public class CourseService {
 
@@ -16,8 +14,6 @@ public class CourseService {
     public String createCourse(Course course) {
 
         try {
-
-            
 
             courseRepository.save(course);
             courseRepository.flush();
@@ -73,7 +69,17 @@ public class CourseService {
 
     }
 
-    
+    public List<Integer> getModuleList(int courseId) {
+        return courseRepository.findByCourseId(courseId).getModuleList();
+    }
 
-
+    // Check if a Module is in the ModuleList of a specific course (signUp API call).
+    public boolean checkForModule(Integer courseId, Integer moduleId) {
+        Course course = courseRepository.findByCourseId(courseId);
+        if (course.getModuleList().contains(moduleId)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

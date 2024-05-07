@@ -24,15 +24,14 @@ public class Course {
     @Id
     @Column(name = "course_id")
     private int courseId;
-    
+
     @Column(name = "description")
     private String description;
 
-    @Column(name= "degree")
+    @Column(name = "degree")
     private String degree;
 
     @Column(name = "module_list")
-    private List<Integer> moduleList; 
-    
+    private List<Integer> moduleList;
+
 }
- 

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("api/v1/course")
 public class CourseController {
@@ -22,14 +21,11 @@ public class CourseController {
 
     @PostMapping("post")
     public String createCourse(@RequestBody Course course) {
-
         return courseService.createCourse(course);
     }
 
     @GetMapping("get/{courseId}")
     public Course getCourse(@PathVariable int courseId) {
-        System.out.println(courseId);
-
         return courseService.getCourse(courseId);
     }
 
@@ -45,8 +41,17 @@ public class CourseController {
 
     @PutMapping("put")
     public String updateCourse(@RequestBody Course course) {
-
         return courseService.updateCourse(course);
+    }
+
+    @GetMapping("getModuleList/{courseId}")
+    public List<Integer> getMethodName(@PathVariable int courseId) {
+        return courseService.getModuleList(courseId);
+    }
+
+    @GetMapping("checkForModule/{courseId}/{moduleId}")
+    public boolean checkForModule(@PathVariable Integer courseId, @PathVariable Integer moduleId) {
+        return courseService.checkForModule(courseId, moduleId);
     }
 
 }
