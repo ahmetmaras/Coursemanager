@@ -22,14 +22,11 @@ public class CourseController {
 
     @PostMapping("post")
     public String createCourse(@RequestBody Course course) {
-
         return courseService.createCourse(course);
     }
 
-    @GetMapping("get/{courseId}")
+    @GetMapping("{courseId}")
     public Course getCourse(@PathVariable int courseId) {
-        System.out.println(courseId);
-
         return courseService.getCourse(courseId);
     }
 
@@ -45,8 +42,22 @@ public class CourseController {
 
     @PutMapping("put")
     public String updateCourse(@RequestBody Course course) {
-
         return courseService.updateCourse(course);
+    }
+
+    @GetMapping("getModuleList/{courseId}")
+    public List<Integer> getMethodName(@PathVariable int courseId) {
+        return courseService.getModuleList(courseId);
+    }
+
+    @GetMapping("checkForModule/{courseId}/{moduleId}")
+    public boolean checkForModule(@PathVariable Integer courseId, @PathVariable Integer moduleId) {
+        return courseService.checkForModule(courseId, moduleId);
+    }
+
+    @GetMapping("checkForCourse/{courseId}")
+    public boolean checkForCourse(@PathVariable int courseId) {
+        return courseService.checkForCourse(courseId);
     }
 
 }
