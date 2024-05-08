@@ -1,6 +1,6 @@
 package com.coursemanager.coursemanager.course;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,6 +73,7 @@ public class CourseService {
         return "Course with courseId " + courseId + " successfully deleted";
 
     }
+
 
     
 
