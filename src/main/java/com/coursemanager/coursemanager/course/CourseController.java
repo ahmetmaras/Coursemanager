@@ -46,7 +46,7 @@ public class CourseController {
     }
 
     @GetMapping("getModuleList/{courseId}")
-    public List<Integer> getMethodName(@PathVariable int courseId) {
+    public List<Integer> getModuleList(@PathVariable int courseId) {
         return courseService.getModuleList(courseId);
     }
 
